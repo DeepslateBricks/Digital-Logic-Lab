@@ -4,6 +4,16 @@
 
 ---
 
+## 零、定位 Vivado 软件位置（为直接调用做准备）
+
+使用
+
+```powershell
+Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* , HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -like "*Vivado*" } | Select-Object DisplayName, InstallLocation, UninstallString
+```
+
+定位 Vivado 安装位置，例如返回的安装位置为 `E:\Vivado`，则 Vivado 二进制文件可能位于：`E:\Vivado\Vivado\2023.2\bin`（示例）。
+
 ## 一、出板前检查清单（参考）
 
 按顺序过一遍，多数返工可以避免：
