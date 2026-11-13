@@ -75,4 +75,4 @@ MISO=R14, MOSI=P14, SCK=N14, TF_CS=N13
 set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports A]
 ```
 
-⚠️ 注意：**仅按键（FB1–FB12）电平设为 LVCMOS15，其余均为 LVCMOS33**。
+⚠️ 注意：**仅按键（FB1–FB12）电平设为 LVCMOS15，其余均为 LVCMOS33**。使用按键作为时钟，约束文件需要加：`set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets clk]`。
